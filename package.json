@@ -4,7 +4,7 @@
   "description": "prototype node express for lambda aws and deploy function via claudia cli",
   "main": "app.js",
   "scripts": {
-    "build": "./node_modules/.bin/babel . -d dist --ignore node_modules,dist",
+    "build": "./node_modules/.bin/babel . -d dist --ignore node_modules,dist && npm start --prefix ./dist",
     "lambda": "npm start --prefix ./dist",
     "start": "node ./node_modules/ntl/cli.js"
   },
@@ -21,6 +21,7 @@
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-preset-env": "^1.6.0",
+    "claudia": "^2.14.2",
     "ntl": "^1.2.0"
   }
 }

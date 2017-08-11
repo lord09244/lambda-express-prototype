@@ -1,0 +1,30 @@
+{
+  "name": "lambda-express-prototype",
+  "version": "1.0.2",
+  "description": "prototype node express for lambda aws and deploy function via claudia cli",
+  "main": "app.js",
+  "scripts": {
+    "deploy": "../node_modules/.bin/claudia create --handler lambda.handler --region ap-southeast-1 --set-env jwtsecret=q7w8e9r7 --role arn:aws:iam::985654324291:role/service-role/http_test",
+    "set-release": "../node_modules/.bin/claudia set-version --version production",
+    "update-release": "npm version patch && ../node_modules/.bin/claudia update --set-env jwtsecret=q7w8e9r7 --version production",
+    "update-test": "npm version patch && ../node_modules/.bin/claudia update --set-env jwtsecret=q7w8e9r7 --version testing",
+    "test": "../node_modules/.bin/claudia test-lambda",
+    "generate-proxy": "claudia generate-serverless-express-proxy --express-module app",
+    "start": "node ../node_modules/ntl/cli.js"
+  },
+  "author": "potusky",
+  "license": "paglc",
+  "repository": "https://github.com/lord09244/lambda-express-prototype.git",
+  "dependencies": {
+    "aws-serverless-express": "^3.0.2",
+    "body-parser": "^1.17.2",
+    "dynamodb-doc": "^1.0.0",
+    "express": "^4.15.4",
+    "jsonwebtoken": "^7.4.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "ntl": "^1.2.0"
+  }
+}
