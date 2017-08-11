@@ -1,7 +1,0 @@
-{
-  "lambda": {
-    "role": "arn:aws:iam::985654324291:role/service-role/http_test",
-    "name": "lambda-express-prototype",
-    "region": "ap-southeast-1"
-  }
-}

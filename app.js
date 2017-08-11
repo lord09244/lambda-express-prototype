@@ -12,7 +12,7 @@ module.exports = function (db) {
   app.use('/auth',require('./middlewares/auth'));
 
   // app controllers
-  app.use('/',require('./routes'));
+  app.use('/',require('./routes'));node 
 
   app.get('/', function (req, res) {
     

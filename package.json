@@ -4,14 +4,9 @@
   "description": "prototype node express for lambda aws and deploy function via claudia cli",
   "main": "app.js",
   "scripts": {
-    "deploy": "claudia create --handler lambda.handler --region ap-southeast-1 --set-env jwtsecret=q7w8e9r7 --role arn:aws:iam::985654324291:role/service-role/http_test",
-    "set-release": "claudia set-version --version production",
-    "update-release": "npm version patch && claudia update --set-env jwtsecret=q7w8e9r7 --version production",
-    "update-test": "npm version patch && claudia update --set-env jwtsecret=q7w8e9r7 --version testing",
-    "test": "claudia test-lambda",
-    "generate-proxy": "claudia generate-serverless-express-proxy --express-module app",
-    "build": "",
-    "start": "ntl"
+    "build": "./node_modules/.bin/babel . -d dist --ignore node_modules,dist",
+    "lambda": "npm start --prefix ./dist",
+    "start": "node ./node_modules/ntl/cli.js"
   },
   "author": "potusky",
   "license": "paglc",
@@ -24,6 +19,8 @@
     "jsonwebtoken": "^7.4.2"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
     "ntl": "^1.2.0"
   }
 }
