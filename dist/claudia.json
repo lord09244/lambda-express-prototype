@@ -1,7 +1,10 @@
 {
-   "lambda": {
-     "role": "arn:aws:iam::985654324291:role/service-role/http_test",
-     "name": "lambda-express-prototype",
-     "region": "ap-southeast-1"
-   }
-} 
+  "lambda": {
+    "role": "arn:aws:iam::842716024212:role/DynamoFull",
+    "name": "lambda-express-prototype2",
+    "region": "ap-southeast-1"
+  },
+  "api": {
+    "id": "mu91oij9ui"
+  }
+}
